@@ -1,0 +1,14 @@
+1.
+	create 1 library file & header file with fun  & its prototype in .h file
+
+2.
+create object file of that library file using :- gcc -c -fpic filename.c
+
+3.make shared library from object file using:- gcc -shared -o Mylib.so filename.o
+
+4.
+link with shared library using  :- gcc -L ./ -o test main.c Mylib.so
+
+
+5. make library avilable at run time using  :- export LD_LIBRARY_PATH=./:$LD_LIBRARY_PATH
+ $: ./test
