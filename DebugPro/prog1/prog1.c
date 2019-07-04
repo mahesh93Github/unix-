@@ -1,3 +1,9 @@
+/*
+pro1 is for tarcing the segmentation fault purpose program 
+at time of compiling at IF condition of fill() fault is occures
+becoz of *name ptr (here we assigne or change a value of name usinging strcpy and name is constant ptr 
+and here we assigne value to it that why we get segmentation fault)
+*/
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>

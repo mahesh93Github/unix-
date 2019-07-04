@@ -1,7 +1,12 @@
+/*
+this file contains the code related to shared file 
+
+*/
+
 #include<stdio.h>
 #include<sys/stat.h>
 
-void statistic(char *fname){
+void statistic(char *fname){     ///this function gives statistic of the of the given file 
 	struct stat ptr;
 
 	if(stat(fname,&ptr)!=0){

@@ -1,6 +1,11 @@
+/*
+   this code is related to static library 
+
+ */
+
 #include<stdio.h>
 #include<sys/stat.h>
-void statistic(char * filename){
+void statistic(char * filename){ ///this function gives the statistic of given file
 	struct stat ptr;
 
 
