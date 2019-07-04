@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<sys/stat.h>
 void statistic(char * filename){
-struct stat ptr;
+	struct stat ptr;
 
 
 	printf("statistic function of library\n");
@@ -10,9 +10,9 @@ struct stat ptr;
 
 	}else
 	{
-	printf("Inode No :%ld \n",ptr.st_ino);	
-	printf("Device  No :%ld \n",ptr.st_dev);
-	printf("Size in byte :%ld \n",ptr.st_size);
+		printf("Inode No :%ld \n",ptr.st_ino);	
+		printf("Device  No :%ld \n",ptr.st_dev);
+		printf("Size in byte :%ld \n",ptr.st_size);
 
 	}
 

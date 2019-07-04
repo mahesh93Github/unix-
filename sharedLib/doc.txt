@@ -12,3 +12,6 @@ link with shared library using  :- gcc -L ./ -o test main.c Mylib.so
 
 5. make library avilable at run time using  :- export LD_LIBRARY_PATH=./:$LD_LIBRARY_PATH
  $: ./test
+
+
+
