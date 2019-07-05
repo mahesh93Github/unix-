@@ -1,0 +1,13 @@
+
+
+1.create 1 sharedLib program file with header file program file contains function defination and header file contains prototype
+2.create l userprogram file to use shared library in that file 
+3.compile all shared file using below cmd
+	gcc -fpic -c sharedfile.c
+	gcc -shared -o libmylib.so sharedfile.o
+4.compile user program and generat output file
+	gcc -c userpro.c -o userpro.o
+5.link shared library to program file using 
+	gcc -o userpro userpro.o -L ./ -imylib
+
+	
