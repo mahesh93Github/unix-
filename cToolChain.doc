@@ -1,0 +1,20 @@
+
+
+steps of compiling c programs
+ 	1.preprrocesing
+		if we can preprocessing on c program then it does comment removal ,macro expansion ,file inclusion
+			we see the preprocessing output by using 
+			gcc -E program.c
+	2.compiling 
+		in this step it get preprocessed out put file and compile it 
+	we can see the out put using 
+		gcc -s outputfile
+
+	3.assembling 
+		in this step conver output file into assemble file 
+	we see the output by using 
+		gcc -E outputfile
+
+	4.linking
+	 	in this step finally we can link the gererated object file and create executable file 
+		gcc -o executable program.obj (object file)
