@@ -4,10 +4,14 @@
 2.create l userprogram file to use shared library in that file 
 3.compile all shared file using below cmd
 	gcc -fpic -c sharedfile.c
+		-fpic -> in generate Position Independant Code sutaible for dynamic linking, PIC con be executed at any address without modification.
 	gcc -shared -o libmylib.so sharedfile.o
+		-shared-> this create shared object which can then linke to other object to form executable
+		-o -> make output file 
 4.compile user program and generat output file
 	gcc -c userpro.c -o userpro.o
 5.link shared library to program file using 
 	gcc -o userpro userpro.o -L ./ -imylib
+		-L ->is user for searching special linker files
 
 	
