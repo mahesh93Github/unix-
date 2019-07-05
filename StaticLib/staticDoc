@@ -1,0 +1,26 @@
+
+1.create 1 static library with function defination and 1 header file with function prototype
+	staticLib.c ,staticLib.h
+		
+2. create 1 user program include header file of staticlib init and use function
+	userProgram.c
+	 
+3. complie and create object file of static library and user program
+	staticLib.o ,userProgram.o
+
+4.create archive/static library of staticlib file
+	$ ar rcs libmy.a staticLib.o
+ 		ar-> create modify and extract from archive
+		rcs-> r ->insert file member into archive file
+		      c->create archive
+		      s->write an object file index into archive file or update exiting one
+
+5.link that lib.a to our program.o and create executable  and run that executable file
+	$ gcc -o userPro userPro.o -L ./ -lmy
+		-o ->place output in file (here userPro)
+		-L ->directory search with that you specified with -L
+		-l -> search the library name when linking
+		./ -> specify search from this path
+
+
+  
