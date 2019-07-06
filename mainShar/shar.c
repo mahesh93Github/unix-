@@ -5,7 +5,7 @@ this file contains the code related to shared file
 
 #include<stdio.h>
 #include<sys/stat.h>
-
+#include"shar.h"
 void statistic(char *fname){     ///this function gives statistic of the of the given file 
 	struct stat ptr;
 
