@@ -1,8 +1,8 @@
-main : mainUser.o libmy.so
-	LD_LIBRARY_PATH=/home/maheshlinux/unix-/sharedLib/ArrayPro gcc -o main mainUser.o -L ./ -lmy
+main : mainUser.o libArr.so
+	LD_LIBRARY_PATH=/home/maheshlinux/unix-/sharedLib/ArrayPro gcc -o main mainUser.o -L ./ -lArr
 mainUser.o : mainUser.c
 	gcc -c mainUser.c
-libmy.so : ArrayLib.o
-	gcc -shared -o libmy.so ArrayLib.o
+libArr.so : ArrayLib.o
+	gcc -shared -o libArr.so ArrayLib.o
 ArrayLib.o : ArrayLib.c
 	gcc -fpic -c ArrayLib.c

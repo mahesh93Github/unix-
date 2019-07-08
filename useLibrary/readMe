@@ -1,0 +1,6 @@
+# make file demostrate how to connect/use multiple .so from diffrent directories 
+#using library connection command add multiple -L path of library.so which are you want to connect. 
+# then after compiling all it generat executable from command and then run that executable 
+# at the time of execution set export LD_LIBRARY_PATH = /lib1:/lib2:/lib3:..........
+this program get library from ArrayPro,FindNumber,numberPro at tthe time of running program i.e dynamicallly
+

@@ -1,10 +1,10 @@
 
-main : mainUser.o libmy.so
-	gcc -o main mainUser.o -L ./ -lmy
+main : mainUser.o libFind.so
+	gcc -o main mainUser.o -L ./ -lFind
 mainUser.o : mainUser.c
 	gcc -c mainUser.c
-libmy.so : maxmini.o
-	gcc -shared -o libmy.so maxmini.o
+libFind.so : maxmini.o
+	gcc -shared -o libFind.so maxmini.o
 maxmini.o : maxmini.c
 	gcc -fpic -c maxmini.c
 

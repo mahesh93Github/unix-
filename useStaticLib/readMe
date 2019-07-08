@@ -1,0 +1,7 @@
+ in this file we demonstret how to connect multiple statict library to our program 
+eg:
+main : mainUser.o
+        gcc -o main mainUser.o -L/home/maheshlinux/unix-/StaticLib/ArrayPro/ -lmy -L/path2 -llib2 -L/path3 -llib3 ........so on
+
+in this format we con add multiple static library to our executable file  
+

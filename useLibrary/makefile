@@ -1,8 +1,8 @@
-#main : mainUser.o /home/maheshlinux/unix-/sharedLib/numberPro/libmy.so 
-#	LD_LIBRARY_PATH=/home/maheshlinux/unix-/sharedLib/numberPro/ gcc -o main mainUser.c -L/home/maheshlinux/unix-/sharedLib/numberPro/ -lmy 
-main : mainUser.o libmy.so
-	gcc -o main mainUser.o -L./ -lmy
-libmy.so : /home/maheshlinux/unix-/sharedLib/numberPro/maxmin.o /home/maheshlinux/unix-/sharedLib/Findnumber/maxmini.o  /home/maheshlinux/unix-/sharedLib/ArrayPro/ArrayLib.o
-	gcc -shared -o libmy.so /home/maheshlinux/unix-/sharedLib/numberPro/maxmin.o /home/maheshlinux/unix-/sharedLib/Findnumber/maxmini.o  /home/maheshlinux/unix-/sharedLib/ArrayPro/ArrayLib.o
+#this make file demostrate how to connect/use multiple .so from diffrent directories 
+#using library connection command add multiple -L path of library.so which are you want to connect. 
+# then after compiling all it generat executable from command and then run that executable 
+# at the time of execution set export LD_LIBRARY_PATH = /lib1:/lib2:/lib3:..........
+main : mainUser.o
+	gcc -o main mainUser.o -L/home/maheshlinux/unix-/sharedLib/ArrayPro -lArr -L/home/maheshlinux/unix-/sharedLib/Findnumber -lFind -L/home/maheshlinux/unix-/sharedLib/numberPro -lmy
 mainUser.o : mainUser.c
 	gcc -c mainUser.c
