@@ -1,0 +1,7 @@
+this is lseek sys call .it is user to get open file offest 
+it has some option 
+SEEK_CUR ->it offset to current offset pluse given offset
+SEEK_END -> gives the offset to file size pluse given offset
+SEEK_SET -> set the offset byte to beggning of the file
+
+after succsses lssek returns offset .

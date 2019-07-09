@@ -1,0 +1,3 @@
+ this program get 2 file ,open 1 file in O_RDWR mode and other in O_RDWR | O_APPEND mode 
+read 10 byte data from 1st file and write|append it into end of the 2nd file using read and write system call
+
