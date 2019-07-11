@@ -1,0 +1,10 @@
+Q3.6  if opening file in read write append mode then can you still read from any where in the file using lseek ?can you lseek to replace data in file?
+
+-> in case of reading data ,yes we can read from any where using lseek .
+   but in case of writing we can not use lseek to replace existing data in the file ,becoz if we open file in append mode then at the time of adding data cursor is positioned at end of file .
+
+
+Q3.5  rediection operation find diffrence between ./a.out > outfile 2>&1   and ./a.out 2>&1 > outfile.
+-> in 1st case the output of ./a.out is redirected to outfile and then if there is any error then that error is redirected to 1 i.e statdred output i.e it is also redirected to outfile.
+ -> in 2nd  case  the output of ./a.out ,if there is error then it is redirected to the standred Error and then it is redirected to standredoutput and it is also redirected to outfile.
+

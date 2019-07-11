@@ -3,49 +3,18 @@
 #include<stdio.h>
 #include<unistd.h>
 #include<fcntl.h>
-/*int fdcpy(int fd1,int fd2)
-  {   int fdN,i=0;
-  int arrFd[fd2];
-  printf("fd1 fd2 %d %d \n",fd1,fd2);
-  for(i=0;i<fd2;i++){
-  fdN = dup(fd1);
-  if(fdN>0 && fdN!=fd2){			
-//close(fdN);
-}else if(fdN>0 && fdN == fd2)
-{
-printf("%d %d\n",fdN ,fd2);
-break;
 
-}
-
-}
-if((fdN[i]=dup(fd1))<0)
-{
-printf("ERROR: in if\n");
-while(--i >0){
-printf("in while %d\n",fdN[i]);
-close(fdN[i]);
-}
-return -1;
-
-}
-printf("%d %d\n",fdN[i],fd2);
-if(fdN[i]==fd2)
-{
-printf("%d %d\n",fdN[i],fd2);
-break;
-}
-}
-while(--i>=0)
-{
-printf("2while %d\n",fdN[i]);
-}
-return fd2;
-}*/
+// this function take dup2 like argument
 
 int fdcpy(int fd1,int fd2)
 {
-	int arr[fd2];
+	if(fd1==fd2)
+	{
+		return fd2;
+	}
+
+	close(fd2);//close chosen fd if it is open 
+	int arr[fd2];  //array to collect fd in init
 	int i=0,j=0;
 	for(i=0;i<fd2;i++)
 	{
@@ -56,27 +25,31 @@ int fdcpy(int fd1,int fd2)
 		}
 
 	}
-	printf("***********%d\n",j);
 	while(j>0)
-	{if(arr[j]!=fd2)
+	{
+		if(arr[j]!=fd2)
 		{
-
-
 			close(arr[j]);
 		}
-	j--;
+		j--;
 	}
-
 	return fd2;
 
-
 }
+/*int cpy(int fd1,int flag,char *ptr)
+{
+	int fd;
+printf("string are %s",ptr);
+	fd=openat(fd,ptr,flag);
+	printf("success full new fd is %d old fd is %d",fd,fd1);
+
+}*/
 int main(int argc,char * argv[])
-{       char buff[7];
-	printf("dup program\n\n");
-	int fd,fd2,fdNo,roffset;
-	printf("after close\n");
-	fd = open(argv[1],O_RDWR);
+{      
+	char buff[7];
+	printf("dup program\n");
+	int fd,fd2,fdNo,roffset,flag = 2;	
+	fd = open(argv[1],flag);
 	printf("new fd %d\n",fd);
 	if(fd==-1)
 	{
@@ -86,6 +59,7 @@ int main(int argc,char * argv[])
 	printf("enter fd no you want:\n");
 	scanf("%d",&fdNo);
 	fd2=fdcpy(fd,fdNo);
+	//also get duplicat fd using open sys call
 	printf("duplicate fd is %d\n",fd2);
 	roffset=read(fd2,buff,7);
 	write(0,buff,sizeof(buff));
