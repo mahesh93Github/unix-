@@ -1,0 +1,5 @@
+Q4.5 : we said that the file size 0 is valid for regular file. we also said that the st_size field is define for directory and symbolic link.
+	should we ever see the file size 0 for directory and symbolic link ?
+--> No , bcoz in case of symbolic link the size is depend on the number of byte in filename on which symbolic link is point.(and we need minimum 1 char to create filename if symbolic link to that file make minmum of 1byte size)
+
+ in case of directory ,directory cantains array of filename and inode number,when the diectory is created then that time OS allocate 1 inode to that directory ,that inode points to minimum 1 block so that we see the directory size in terms 1 block,it is minimum size allocation for storing meta data about file contain in that directory along with name.
