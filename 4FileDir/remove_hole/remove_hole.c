@@ -15,7 +15,7 @@ int main(int argc ,char *argv[])
 {
 	int fd1,fd2,index;
 	fd1=open(argv[1],O_RDWR);
-	struct startEnd ptr;
+	struct Hole ptr;
 	if(fd1<0)
 	{
 		printf("ERROR : in file openning\n");
@@ -35,7 +35,7 @@ int main(int argc ,char *argv[])
 	switch(index)
 	{
 		case indx1:   
-				removeFromBeginning(fd1,fd2,&ptr);
+				noHole(fd1,fd2,&ptr);
 				printf("after remove fun\n");
 				break;
 		case indx2:

@@ -2,11 +2,11 @@
 #include<fcntl.h>
 #include<sys/stat.h>
 #include<unistd.h>
-struct startEnd
+struct Hole
 {
 int start;
 int end;
 };
 
-int  removeFromBeginning(int ,int ,struct startEnd *);
+int  noHole(int ,int ,struct Hole *);
 
