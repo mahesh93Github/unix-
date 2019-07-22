@@ -8,5 +8,5 @@ int start;
 int end;
 };
 
-int  noHole(int ,int ,struct Hole *);
-
+int findHole(int ,int ,struct Hole *);
+int checkForOne(int ,int);

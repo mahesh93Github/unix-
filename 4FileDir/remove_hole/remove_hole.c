@@ -5,11 +5,6 @@
 #define indx1 1
 #define indx2 2
 #define indx3 3
-/*struct startEnd
-{
-int start;
-int end;
-};*/
 
 int main(int argc ,char *argv[])
 {
@@ -30,15 +25,15 @@ int main(int argc ,char *argv[])
 	}
 
 	printf("enter your choice \n");
-	printf("1.Remove hole from beginning\n 2.Remove hole from middel \n 3.Remove hole from last\n");
+	printf("1.check hole are present or not \n 2.Remove hole from middel \n 3.Remove hole from last\n");
 	scanf("%d",&index);
 	switch(index)
 	{
 		case indx1:   
-				noHole(fd1,fd2,&ptr);
+				findHole(fd1,fd2,&ptr);
 				printf("after remove fun\n");
 				break;
-		case indx2:
+		case indx2: checkForOne(fd1,fd2);
 			break;
 		case indx3:
 			break;
