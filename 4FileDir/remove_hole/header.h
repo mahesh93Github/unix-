@@ -11,4 +11,4 @@ int end;
 int findHole(int ,int ,struct Hole *);
 int checkForOne(int ,int);
 int checkForMoreHole(int,int);
-
+int checkForTwoHole(int,int);
