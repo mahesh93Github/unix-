@@ -20,19 +20,21 @@ int main(int argc ,char *argv[])
 	{
 		printf("1.create hole \t 2.create data 3.exit\n");
 		scanf("%d",&index);
+		int len=0;
 		switch(index)
 		{
 			case val1 :
-				lseek(fd1,10,SEEK_CUR);
+				len =lseek(fd1,10,SEEK_CUR);
+				truncate(argv[1],len+10);
 				break;
 			case val2 :
 				write(fd1,buff,sizeof(buff));
 				break;
 			case val3 : flag = 0;
-				 break;
+				    break;
 			default : 
-				 printf("invalid choice\n");
-				 break;
+				    printf("invalid choice\n");
+				    break;
 		}
 	}
 
