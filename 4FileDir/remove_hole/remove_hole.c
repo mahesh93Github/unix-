@@ -25,17 +25,16 @@ int main(int argc ,char *argv[])
 	}
 
 	printf("enter your choice \n");
-	printf("1.check hole are present or not \n 2.Remove hole from middel \n 3.Remove hole from last\n");
+	printf("1.check hole are present or not \n 2.check for one hole \n 3.check for more than 2 hole\n");
 	scanf("%d",&index);
 	switch(index)
 	{
 		case indx1:   
 				findHole(fd1,fd2,&ptr);
-				printf("after remove fun\n");
 				break;
 		case indx2: checkForOne(fd1,fd2);
 			break;
-		case indx3:
+		case indx3: checkForMoreHole(fd1,fd2);
 			break;
 		default :
 			break;
