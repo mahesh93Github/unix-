@@ -1,0 +1,3 @@
+Q4.9 we show the unlink function as modify the  change staus time of file itself.how can this happen?
+-> st_ctime variable form stat structure is modify when any of the matadata of the file is modify.
+in this case we can modify unlink the link to that file from inode so that by defaul change status time is change.

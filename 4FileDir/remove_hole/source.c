@@ -95,12 +95,12 @@ int checkForTwoHole(int fd1,int fd2)
 		}
 
 		if(buff !=0)
-		{ //printf("more buff %c",buff);
+		{ 
 			write(fd2,&buff,sizeof(buff));
 			if(sCount!=0 && buff !=0)
 			{
 				eCount = count-1;
-				printf("end of Hole %d\n",eCount);
+				printf("end of Hole===== %d\n",eCount);
 				sCount = eCount= 0;
 			}
 
@@ -108,12 +108,12 @@ int checkForTwoHole(int fd1,int fd2)
 	}
 	if(sCount>0 && eCount == 0)
 	{
-		printf("end of Hole %d\n",count);
+		printf("end of Hole--- %d\n",count);
 
 	}
 
 
-
+	return total;
 }
 int checkForMoreHole(int fd1,int fd2)
 {

@@ -40,8 +40,8 @@ int main(int argc ,char *argv[])
 			assert(findHole(fd1,fd2,&ptr)==1);
 			//printf("only data are present\n");
 			break;
-		case indx3: checkForTwoHole(fd1,fd2);
-break;
+		case indx3: assert(checkForTwoHole(fd1,fd2)==2);
+			    break;
 		case indx4: assert(checkForOne(fd1,fd2)==1);
 			    break;
 		case indx5: assert(checkForMoreHole(fd1,fd2)>2);
