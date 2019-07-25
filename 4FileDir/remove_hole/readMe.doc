@@ -1,0 +1,7 @@
+
+1.this file cantains header file header.h , 
+2.main program remove_hole.c which call all hole related functions which is present in source.c
+3. source.c file contains findHole(),checkForOne(),checkForMoreHole(),checkForTwoHole() this function get 2 file discriptor as argument and 
+printf range of that hole and also return no of hole present in that file .
+4. make file compile and create executable for this program .
+5.testcase directory contains all related tastcase for this program and it also cantains 1 Create_Hole.c program to create file with hole and data

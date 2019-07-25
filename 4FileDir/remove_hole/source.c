@@ -1,6 +1,6 @@
 #include"header.h"
 
-int findHole(int fd1,int fd2,struct Hole *ptr)
+int findHole(int fd1,int fd2)
 {
 	char buff;
 	int count=0,flag = 0;
@@ -22,13 +22,14 @@ int findHole(int fd1,int fd2,struct Hole *ptr)
 			count =1;
 		}
 	}
+
 	if(count ==1 && flag ==0 )
-	{
-		//printf("there is only hole in file\n");
-		return 0;
-	}else if(count == 0 && flag ==1){
-		//printf("there is only data in file\n");
+	{ 
+	
 		return 1;
+	}else if(count == 0 && flag ==1){
+	
+		return 2;
 	}
 }
 
@@ -100,7 +101,7 @@ int checkForTwoHole(int fd1,int fd2)
 			if(sCount!=0 && buff !=0)
 			{
 				eCount = count-1;
-				printf("end of Hole===== %d\n",eCount);
+				printf("end of Hole %d\n",eCount);
 				sCount = eCount= 0;
 			}
 
@@ -108,7 +109,7 @@ int checkForTwoHole(int fd1,int fd2)
 	}
 	if(sCount>0 && eCount == 0)
 	{
-		printf("end of Hole--- %d\n",count);
+		printf("end of Hole %d\n",count);
 
 	}
 
@@ -138,7 +139,7 @@ int checkForMoreHole(int fd1,int fd2)
 		}
 
 		if(buff !=0)
-		{ //printf("more buff %c",buff);
+		{ 
 			write(fd2,&buff,sizeof(buff));
 			if(sCount!=0 && buff !=0)
 			{

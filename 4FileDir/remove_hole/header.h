@@ -8,7 +8,7 @@ int start;
 int end;
 };
 
-int findHole(int ,int ,struct Hole *);
+int findHole(int ,int);
 int checkForOne(int ,int);
 int checkForMoreHole(int,int);
 int checkForTwoHole(int,int);

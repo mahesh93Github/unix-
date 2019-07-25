@@ -13,7 +13,6 @@ int main(int argc ,char *argv[])
 {
 	int fd1,fd2,index;
 	fd1=open(argv[1],O_RDWR);
-	struct Hole ptr;
 	if(fd1<0)
 	{
 		printf("ERROR : in file openning\n");
@@ -33,12 +32,12 @@ int main(int argc ,char *argv[])
 	switch(index)
 	{
 		case indx1:   
-			assert(findHole(fd1,fd2,&ptr)==0);
-			//printf("only hole are present\n");
+			assert(findHole(fd1,fd2)==1);
+			printf("only hole are present\n");
 			break;
 		case indx2:
-			assert(findHole(fd1,fd2,&ptr)==1);
-			//printf("only data are present\n");
+			assert(findHole(fd1,fd2)==2);
+			printf("only data are present\n");
 			break;
 		case indx3: assert(checkForTwoHole(fd1,fd2)==2);
 			    break;

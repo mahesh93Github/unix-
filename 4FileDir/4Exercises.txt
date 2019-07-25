@@ -1,3 +1,10 @@
+Q4.8 we check the available disk space using df command ? why not check using du command?
+-> becoz du command is use for estimate file use space i.e summarise the disk usage of the set of file for dirctory(count free space)
+and df use for display the ammount of the disk space available on the file system.
+
 Q4.9 we show the unlink function as modify the  change staus time of file itself.how can this happen?
 -> st_ctime variable form stat structure is modify when any of the matadata of the file is modify.
 in this case we can modify unlink the link to that file from inode so that by defaul change status time is change.
+
+
+
